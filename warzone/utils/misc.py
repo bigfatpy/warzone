@@ -1,12 +1,4 @@
-"""
-Hosts Generation
-
-Input: my[001..900].domain.com
-
-Output: my001.domain.com, my002.domain.com, ... my900.domain.com
-"""
 import re
-import unittest
 
 
 def generate_hosts(inventory):
@@ -39,17 +31,3 @@ def generate_hosts(inventory):
                                               groups.group('suffix')))
 
     return hosts
-
-
-class Test(unittest.TestCase):
-    result = generate_hosts(inventory='my[0001..1000].domain.com')
-    
-    def test_format(self):
-        self.assertIn('my0003.domain.com', self.result)
-    
-    def test_size(self):
-        self.assertEqual(len(self.result), 1000)
-
-
-if __name__ == "__main__":
-    unittest.main()
