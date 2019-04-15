@@ -1,0 +1,25 @@
+{
+    "_meta": {
+        "hash": {
+            "sha256": "f173cb07233ba9d57f8679888ac1aa5d897d6fcd4cf453c781cacb6933294ace"
+        },
+        "pipfile-spec": 6,
+        "requires": {
+            "python_version": "3.7"
+        },
+        "sources": [
+            {
+                "name": "pypi",
+                "url": "https://pypi.org/simple",
+                "verify_ssl": true
+            }
+        ]
+    },
+    "default": {
+        "warzone": {
+            "editable": true,
+            "path": "."
+        }
+    },
+    "develop": {}
+}
