@@ -92,6 +92,13 @@ class TestHashTable(unittest.TestCase):
         for key, value in ht.items():
             self.assertEqual(key, value)
 
+    def test_args(self):
+        ht = HashTable(foo='bar', foo2='bar2', foo3='bar3')
+        self.assertEqual(len(ht), 3)
+        self.assertEqual(ht['foo'], 'bar')
+        self.assertEqual(ht['foo2'], 'bar2')
+        self.assertEqual(ht['foo3'], 'bar3')
+
 
 if __name__ == "__main__":
     unittest.main()
