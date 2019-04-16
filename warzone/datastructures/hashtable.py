@@ -70,6 +70,10 @@ class HashTable:
             for item in bucket:
                 yield item.key
 
+    def __repr__(self):
+        items = [f'{key}={repr(value)}' for key, value in self.items()]
+        return f'{self.__class__.__name__}({", ".join(items)})'
+
     def keys(self):
         table_keys = []
         for bucket in self._hash_table:

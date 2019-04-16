@@ -99,6 +99,13 @@ class TestHashTable(unittest.TestCase):
         self.assertEqual(ht['foo2'], 'bar2')
         self.assertEqual(ht['foo3'], 'bar3')
 
+    def test_repr(self):
+        ht = HashTable(foo='bar', foo2='bar2', foo3='bar3')
+        self.assertIn("HashTable(", repr(ht))
+        self.assertIn("foo='bar'", repr(ht))
+        self.assertIn("foo2='bar2'", repr(ht))
+        self.assertIn("foo3='bar3'", repr(ht))
+
 
 if __name__ == "__main__":
     unittest.main()
