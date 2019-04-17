@@ -28,11 +28,13 @@ def get_next_prime(n):
 
 
 class HashTable:
-    def __init__(self):
+    def __init__(self, **kwargs):
         self._size = 1
         self._hash_table = [[] for _ in range(self._size)]
         self._counter = 0
         self._resizing = False
+        for key, value in kwargs.items():
+            self[key] = value
 
     def __setitem__(self, key, value):
         hash_key = hash(key) % self._size
@@ -67,6 +69,10 @@ class HashTable:
         for bucket in self._hash_table:
             for item in bucket:
                 yield item.key
+
+    def __repr__(self):
+        items = [f'{key}={repr(value)}' for key, value in self.items()]
+        return f'{self.__class__.__name__}({", ".join(items)})'
 
     def keys(self):
         table_keys = []
