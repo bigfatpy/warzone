@@ -27,4 +27,12 @@ steps:
 - script: |
     pipenv install --dev
     pipenv run python tests/run.py
-  displayName: 'unittest'
+  displayName: 'Unittest'
+
+- script: |
+    pylint warzone/*
+  displayName: 'Pylint'
+
+- script: |
+    flake8 warzone/*
+  displayName: 'Flake8'
