@@ -26,5 +26,9 @@ steps:
   displayName: 'Install dependencies'
 
 - script: |
-    pipenv run python tests/run.py
-  displayName: 'unittest'
+    pipenv run coverage run tests/run.py
+  displayName: 'Unittests'
+
+- script: |
+    pipenv run coverage report
+  displayName: 'Covereage'
