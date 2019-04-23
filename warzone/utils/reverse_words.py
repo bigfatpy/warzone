@@ -11,6 +11,6 @@ def reverse_words(value):
     match = re.finditer('[a-zA-Z]+', value)
 
     for item in match:
-        value = value[:item.start()] + item.group()[::-1] + value[item.end():]
+        value = f'{value[:item.start()]}{item.group()[::-1]}{value[item.end():]}'
     
     return value
