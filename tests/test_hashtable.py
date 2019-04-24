@@ -1,5 +1,4 @@
 import unittest
-import time
 
 from warzone.datastructures.hashtable import HashTable
 
@@ -37,28 +36,6 @@ class TestHashTable(unittest.TestCase):
 
         # At this point we have 2 items in total
         self.assertEqual(len(ht), 2)
-
-    def test_get_item_time(self):
-        ht = HashTable()
-        # Adding 100000 items to the table
-        for i in range(100000):
-            ht[i] = i
-
-        # Calculating the time to pick one item with low index
-        start = time.perf_counter()
-        # Doing it a million times
-        for _ in range(1000000):
-            ht[10]
-        time_taken_low_index = time.perf_counter() - start
-
-        # Calculating the time to pick one item with high index
-        start = time.perf_counter()
-        # Doing it a million times
-        for _ in range(1000000):
-            ht[98000]
-        time_taken_high_index = time.perf_counter() - start
-
-        self.assertAlmostEqual(time_taken_low_index, time_taken_high_index, places=1)
 
     def test_keys(self):
         ht = HashTable()
